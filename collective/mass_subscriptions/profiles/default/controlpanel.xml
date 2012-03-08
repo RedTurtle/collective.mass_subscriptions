@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="collective.mass_subscriptions"
+    purge="False">
+
+    <configlet
+        title="Users mass subscriptions"
+        action_id="mass_subscriptions"
+        appId="collective.mass_subscriptions"
+        category="Products"
+        condition_expr=""
+        icon_expr="string:${portal_url}/group.gif"
+        url_expr="string:${portal_url}/@@mass-subscriptions"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Add portal member</permission>
+    </configlet>
+
+</object>

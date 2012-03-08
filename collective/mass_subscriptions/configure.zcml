@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.mass_subscriptions">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.mass_subscriptions"
+      directory="profiles/default"
+      description="A quick way for administrators to subscribe a set of users"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.mass_subscriptions"
+      directory="profiles/uninstall"
+      description="Remove collective.mass_subscriptions"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  
+</configure>

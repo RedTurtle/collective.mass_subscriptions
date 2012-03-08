@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.mass_subscriptions">
+
+    <include package="plone.app.contentmenu" />
+
+    <browser:page
+	   name="mass-subscriptions"
+	   class=".subscriptions.MassSubscriptionsView"
+	   template="mass_subscriptions.pt"
+	   permission="cmf.AddPortalMember"
+	   for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+	   />
+
+</configure>

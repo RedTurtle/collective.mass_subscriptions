@@ -1,0 +1,99 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-03-08 09:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.mass_subscriptions\n"
+
+#: ../browser/mass_subscriptions.pt:44
+msgid "CSV source file"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:94
+msgid "Mail message"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:89
+msgid "Mail subject"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:25
+msgid "Mass subscriptions of users"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:78
+msgid "Notifications"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:108
+msgid "Send"
+msgstr ""
+
+#: ../browser/subscriptions.py:97
+msgid "To send confirmation e-mail to users you need to provide both subject and a template"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:40
+msgid "Users data"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "Users mass subscriptions"
+msgstr ""
+
+#: ../browser/mass_subscriptions.pt:82
+msgid "Warn subscribed users with an e-mail"
+msgstr ""
+
+#. Default: "Can't send e-mail to $username"
+#: ../browser/subscriptions.py:128
+msgid "cant_send_mail_message"
+msgstr ""
+
+#. Default: "Provide a proper CSV file in the format \"username,fullname,email,password,…\". Please note also that only the \"username\" column is required. If you don't provide an \"email\" address for an user, you can't notify it. If you don't provide a password, it will be generated randomly. You can put inside the CSV all properties you want; all of them will be used to update user's data. The CSV file must contain a header row because the column meaning is taken from headers and not from the given order; please be sure that headers contains the real property names."
+#: ../browser/mass_subscriptions.pt:49
+msgid "csv_format_help"
+msgstr ""
+
+#. Default: "Select to send an e-mail to every new user with a personal message."
+#: ../browser/mass_subscriptions.pt:83
+msgid "mail_message_help"
+msgstr ""
+
+#. Default: "Write here a model of message you want to send. You can put inside the message a \"$username\" to use the new user's username, a \"$password\" to use the user's password and a \"$portal_url\" to use the current portal URL. You can also use \"$data-propname\" to fill the message with whatever additional column of the CSV with name \"propname\"."
+#: ../browser/mass_subscriptions.pt:95
+msgid "mail_template_help"
+msgstr ""
+
+#. Default: "From this form you can provide a CSV file with users that you want to subscribe to your site. You can also choose to provide to them a \"welcome\" message that will be sent by e-mail, or add them immediatly to groups."
+#: ../browser/mass_subscriptions.pt:27
+msgid "mass_subscription_form_description"
+msgstr ""
+
+#. Default: "Can't add user $name - $msg"
+#: ../browser/subscriptions.py:138
+msgid "new_user_error"
+msgstr ""
+
+#. Default: "Registered new user $name"
+#: ../browser/subscriptions.py:118
+msgid "new_user_message"
+msgstr ""
+
+#. Default: "Error while sending e-mail to $email"
+#: ../browser/subscriptions.py:63
+msgid "send_mail_error_message"
+msgstr ""
+

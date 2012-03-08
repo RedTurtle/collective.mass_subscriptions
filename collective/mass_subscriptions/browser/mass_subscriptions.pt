@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="collective.mass_subscriptions">
+
+<body>
+<div metal:fill-slot="prefs_configlet_content">
+
+<div id="content" class="documentContent massSubscriptions">
+	
+    <div metal:use-macro="here/global_statusmessage/macros/portal_message">
+        Portal status message
+    </div>
+
+    <a href=""
+       id="setup-link"
+       tal:attributes="href string:$portal_url/plone_control_panel"
+       i18n:domain="plone"
+       i18n:translate="">
+        Site Setup
+    </a> &rsaquo;
+	
+	<h1 class="documentFirstHeading" i18n:translate="">Mass subscriptions of users</h1>
+
+	<p class="documentDescription" i18n:translate="mass_subscription_form_description">
+		From this form you can provide a CSV file with users that you want to subscribe
+		to your site. You can also choose to provide to them a &quot;welcome&quot; message
+		that will be sent by e-mail, or add them immediatly to groups.
+	</p>
+
+    <form id="mass_subscriptions_form"
+	      method="post"
+          class="enableFormTabbing enableUnloadProtection"
+		  enctype="multipart/form-data"
+          tal:attributes="action string:$portal_url/@@mass-subscriptions">
+
+        <fieldset id="fieldset-usersdata">
+			<legend id="fieldsetlegend-usersdata"
+			        i18n:translate="">Users data</legend>
+
+			<div class="field">
+				<label for="csv" i18n:translate="">CSV source file</label>
+                <span class="fieldRequired" title="Required"
+				      i18n:domain="plone"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
+				<div class="formHelp" i18n:translate="csv_format_help">
+					Provide a proper CSV file in the format &quot;username,fullname,email,password,&hellip;&quot;.
+					Please note also that only the &quot;username&quot; column is required.
+					If you don't provide an &quot;email&quot; address for an user, you can't notify it.
+					If you don't provide a password, it will be generated randomly.
+					You can put inside the CSV all properties you want; all of them will be used to update user's data.
+					The CSV file must contain a header row because the column meaning is taken from headers and not from
+					the given order; please be sure that headers contains the real property names.
+				</div>
+				<input type="file" name="csv" id="csv" size="40" />
+			</div>
+
+			<div class="field" tal:condition="view/can_manage_groups">
+				<strong>Add also users to those groups</strong>
+				<ul class="visualNoMarker"
+				    tal:repeat="group view/all_groups">
+					<li>
+						<input type="checkbox" name="groups:list"
+						       tal:attributes="value group;
+						                       id string:gp-${repeat/group/number}" />
+	                    <label tal:attributes="for string:gp-${repeat/group/number}"
+						       tal:content="group">The group</label>
+					</li>
+				</ul>
+			</div>
+
+		</fieldset>
+
+        <fieldset id="fieldset-email">
+        	<legend id="fieldsetlegend-email"
+			        i18n:translate="">Notifications</legend>
+			<div class="field">
+				<input type="checkbox" name="mail:default:boolean" value="True" id="mail" />
+				<label for="mail" i18n:translate="">Warn subscribed users with an e-mail</label>
+				<div class="formHelp" i18n:translate="mail_message_help">
+					Select to send an e-mail to every new user with a personal message.
+				</div>
+			</div>
+
+			<div class="field">
+				<label for="subject" i18n:translate="">Mail subject</label><br/>
+				<input type="text" size="40" name="subject" value="" id="subject" />
+			</div>
+
+			<div class="field">
+				<label for="mail_template" i18n:translate="">Mail message</label>
+				<div class="formHelp" i18n:translate="mail_template_help">
+					Write here a model of message you want to send. You can put inside the message a
+					&quot;$username&quot; to use the new user's username, a &quot;$password&quot;
+					to use the user's password and a &quot;$portal_url&quot; to use the
+					current portal URL.
+					You can also use &quot;$data-propname&quot; to fill the message with whatever
+					additional column of the CSV with name &quot;propname&quot;.
+				</div>
+				<textarea name="mail_template" id="mail_template"
+				          rows="8" style="width:100%"></textarea>
+			</div>
+		</fieldset>
+		
+		<input type="submit" name="Send" value="Send" i18n:attributes="value" />
+		
+    </form>
+
+</div>
+
+</div>
+</body>
+</html>
