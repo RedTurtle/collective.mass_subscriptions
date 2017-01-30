@@ -9,6 +9,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+from plone import api
+
 try:
     from Products.GroupUserFolder.GroupsToolPermissions import ManageGroups
 except ImportError:
@@ -130,6 +132,10 @@ class MassSubscriptionsView(BrowserView):
                                                  mapping={'username': username},
                                                  ),
                                                type="warning")
+                                               
+                if userdata.get('group') and self.can_manage_groups:
+                    group=userdata.get('group')
+                    api.group.add_user(groupname=group, username=username)
 
                 if form.get('groups') and self.can_manage_groups:
                     self._addUserToGroups(username, form.get('groups'))
