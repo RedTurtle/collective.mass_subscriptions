@@ -16,6 +16,9 @@ generated randomly.
 If you have powers to manage groups, you can also add all new users to one or more groups
 available.
 
+If you add a row named 'group', the user is added to that group.
+
+
 Finally you can send a notification message to those users, customizing the message text
 (for example: to give to users the account's email address).
 

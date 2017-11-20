@@ -5,3 +5,13 @@ Changelog
 ------------------
 
 * Initial release
+
+
+0.1.1 (2017)
+
+* When the CSV file has a row: group, the user is added to that group.
+
+email,username,fullname,group
+jim@email.com,jim,Jim My,TeamA
+
+Will add 'jim' to 'TeamA' group
