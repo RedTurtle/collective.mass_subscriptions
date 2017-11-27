@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.0'
+version = '0.1.1'
 
 setup(name='collective.mass_subscriptions',
       version=version,

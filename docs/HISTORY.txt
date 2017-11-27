@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.1 (unreleased)
+0.1.1 (2017-11-27)
 ------------------
 * When the CSV file has a row: group, the user is added to that group.
   [espenmn]
